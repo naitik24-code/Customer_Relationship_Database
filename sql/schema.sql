@@ -3,11 +3,11 @@
 -- Target Database: MySQL 8.0
 -- ==========================================
 
-CREATE DATABASE IF NOT EXISTS crm_management_system
-  CHARACTER SET utf8mb4
-  COLLATE utf8mb4_unicode_ci;
+-- CREATE DATABASE IF NOT EXISTS crm_management_system
+--   CHARACTER SET utf8mb4
+--   COLLATE utf8mb4_unicode_ci;
 
-USE crm_management_system;
+-- USE crm_management_system;
 
 -- Disable foreign key checks to allow clean drop/recreate of tables if needed
 SET FOREIGN_KEY_CHECKS = 0;

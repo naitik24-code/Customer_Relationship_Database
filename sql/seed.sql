@@ -4,7 +4,7 @@
 -- Ensures at least 20 records per primary table
 -- =====================================================
 
-USE crm_management_system;
+-- USE crm_management_system;
 
 -- Disable foreign key checks to avoid ordering issues during insert
 SET FOREIGN_KEY_CHECKS = 0;
