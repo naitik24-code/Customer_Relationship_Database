@@ -1,0 +1,14 @@
+{
+  "name": "crm-suite-root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=frontend",
+    "start": "npm start --workspace=backend",
+    "dev": "npm run dev --workspace=backend"
+  }
+}
