@@ -18,17 +18,19 @@ const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
+const path = require('path');
+
 // Middleware
 app.use(cors());
-app.use(helmet());
+app.use(helmet({
+  contentSecurityPolicy: false
+}));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Welcome Route
-app.get('/', (req, res) => {
-  res.json({ message: 'Welcome to CRM Management System API' });
-});
+// Serve React static files
+app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 // Routes
 app.use('/api/auth', authRoutes);
@@ -40,6 +42,14 @@ app.use('/api/opportunities', opportunityRoutes);
 app.use('/api/tickets', ticketRoutes);
 app.use('/api/reports', reportRoutes);
 app.use('/api/audit', auditRoutes);
+
+// Fallback to React app for non-API routes (React Router support)
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api')) {
+    return next();
+  }
+  res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+});
 
 // Error Handling Middleware
 app.use(errorHandler);
