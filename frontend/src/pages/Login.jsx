@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#070b13] text-slate-100 overflow-hidden relative">
+    <div className="auth-page flex min-h-screen bg-[#FBFBF9] text-[#141b2b] overflow-hidden relative">
       {/* Background visual glow */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.08),transparent_50%)]"></div>
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(99,102,241,0.05),transparent_50%)]"></div>
@@ -55,7 +55,7 @@ const Login = () => {
             {/* Logo */}
             <div className="flex items-center space-x-2">
               <span className="text-2xl font-extrabold tracking-widest bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-                CRM SUITE
+                LEDGER &amp; CO.
               </span>
               <span className="px-2 py-0.5 text-[10px] font-bold bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-full">Enterprise Edition</span>
             </div>

@@ -29,7 +29,7 @@ import {
   Line
 } from 'recharts';
 
-const COLORS = ['#3b82f6', '#10b981', '#f59e0b', '#ef4444', '#8b5cf6'];
+const COLORS = ['#9d3d26', '#5B7563', '#6a758a', '#ba1a1a', '#8a726c'];
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -189,7 +189,7 @@ const Dashboard = () => {
                   <YAxis stroke="#94a3b8" fontSize={11} />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                   <Legend />
-                  <Line type="monotone" dataKey="projected_revenue" stroke="#3b82f6" strokeWidth={3} name="Revenue (₹)" activeDot={{ r: 8 }} />
+                  <Line type="monotone" dataKey="projected_revenue" stroke="#9d3d26" strokeWidth={3} name="Revenue (₹)" activeDot={{ r: 8 }} />
                 </LineChart>
               </ResponsiveContainer>
             </div>
@@ -207,8 +207,8 @@ const Dashboard = () => {
                 <AreaChart data={growthData} margin={{ top: 10, right: 30, left: 0, bottom: 0 }}>
                   <defs>
                     <linearGradient id="colorGrowth" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="#10b981" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="#10b981" stopOpacity={0}/>
+                      <stop offset="5%" stopColor="#5B7563" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="#5B7563" stopOpacity={0}/>
                     </linearGradient>
                   </defs>
                   <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" />
@@ -216,7 +216,7 @@ const Dashboard = () => {
                   <YAxis stroke="#94a3b8" fontSize={11} />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                   <Legend />
-                  <Area type="monotone" dataKey="new_customers" stroke="#10b981" fillOpacity={1} fill="url(#colorGrowth)" name="New Customers" />
+                  <Area type="monotone" dataKey="new_customers" stroke="#5B7563" fillOpacity={1} fill="url(#colorGrowth)" name="New Customers" />
                 </AreaChart>
               </ResponsiveContainer>
             </div>
@@ -237,8 +237,8 @@ const Dashboard = () => {
                   <YAxis stroke="#94a3b8" fontSize={11} />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                   <Legend />
-                  <Bar dataKey="total_leads" fill="#3b82f6" name="Total Leads" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="converted_leads" fill="#10b981" name="Converted" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="total_leads" fill="#9d3d26" name="Total Leads" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="converted_leads" fill="#5B7563" name="Converted" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
@@ -259,8 +259,8 @@ const Dashboard = () => {
                   <YAxis stroke="#94a3b8" fontSize={11} />
                   <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                   <Legend />
-                  <Bar dataKey="total_tickets" fill="#8b5cf6" name="Total Tickets" radius={[4, 4, 0, 0]} />
-                  <Bar dataKey="resolved_tickets" fill="#ec4899" name="Resolved Tickets" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="total_tickets" fill="#6a758a" name="Total Tickets" radius={[4, 4, 0, 0]} />
+                  <Bar dataKey="resolved_tickets" fill="#5B7563" name="Resolved Tickets" radius={[4, 4, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>

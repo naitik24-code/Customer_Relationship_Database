@@ -126,7 +126,7 @@ const Reports = () => {
                 <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} />
                 <YAxis stroke="#94a3b8" fontSize={10} />
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
-                <Line type="monotone" dataKey="projected_revenue" stroke="#3b82f6" strokeWidth={2.5} name="Projected Revenue (₹)" />
+                  <Line type="monotone" dataKey="projected_revenue" stroke="#9d3d26" strokeWidth={2.5} name="Projected Revenue (₹)" />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -174,7 +174,7 @@ const Reports = () => {
                 <XAxis dataKey="month" stroke="#94a3b8" fontSize={10} />
                 <YAxis stroke="#94a3b8" fontSize={10} />
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
-                <Area type="monotone" dataKey="new_customers" stroke="#10b981" fill="rgba(16,185,129,0.15)" name="New signups" />
+                <Area type="monotone" dataKey="new_customers" stroke="#5B7563" fill="rgba(91,117,99,0.15)" name="New signups" />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -221,8 +221,8 @@ const Reports = () => {
                 <YAxis stroke="#94a3b8" fontSize={10} />
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                 <Legend />
-                <Bar dataKey="total_leads" fill="#3b82f6" name="Total Incoming" />
-                <Bar dataKey="converted_leads" fill="#10b981" name="Converted" />
+                <Bar dataKey="total_leads" fill="#9d3d26" name="Total Incoming" />
+                <Bar dataKey="converted_leads" fill="#5B7563" name="Converted" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -273,8 +273,8 @@ const Reports = () => {
                 <YAxis stroke="#94a3b8" fontSize={10} />
                 <Tooltip contentStyle={{ backgroundColor: '#1e293b', borderColor: '#334155', color: '#f8fafc' }} />
                 <Legend />
-                <Bar dataKey="total_tickets" fill="#8b5cf6" name="Total Tickets" />
-                <Bar dataKey="resolved_tickets" fill="#ec4899" name="Resolved Tickets" />
+                <Bar dataKey="total_tickets" fill="#6a758a" name="Total Tickets" />
+                <Bar dataKey="resolved_tickets" fill="#5B7563" name="Resolved Tickets" />
               </BarChart>
             </ResponsiveContainer>
           </div>

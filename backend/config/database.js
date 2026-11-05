@@ -10,6 +10,13 @@ const sequelize = new Sequelize(
     port: process.env.DB_PORT || process.env.MYSQLPORT || 3306,
     dialect: 'mysql',
     logging: false, // Set to console.log to see SQL queries
+    dialectOptions: process.env.DB_SSL === 'true' ? {
+      ssl: {
+        require: true,
+        rejectUnauthorized: true,
+        ...(process.env.DB_SSL_CA ? { ca: process.env.DB_SSL_CA.replace(/\\n/g, '\n') } : {})
+      }
+    } : {},
     define: {
       timestamps: false, // We handle timestamps manually or explicitly in models
       underscored: true // database fields use snake_case

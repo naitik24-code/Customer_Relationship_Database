@@ -14,7 +14,9 @@ import {
   Menu,
   X,
   User,
-  Shield
+  Shield,
+  Search,
+  PlusCircle
 } from 'lucide-react';
 
 const DashboardLayout = ({ children }) => {
@@ -50,7 +52,7 @@ const DashboardLayout = ({ children }) => {
   };
 
   return (
-    <div className="flex h-screen bg-[#08080a] overflow-hidden text-slate-100">
+    <div className="app-shell flex h-screen bg-[#f4f1eb] overflow-hidden text-slate-100">
       
       {/* Sidebar for Mobile */}
       {sidebarOpen && (
@@ -115,14 +117,16 @@ const DashboardLayout = ({ children }) => {
 
       {/* Desktop Sidebar */}
       <div className="hidden md:flex md:flex-shrink-0">
-        <div className="flex flex-col w-64 bg-[#0a0a0d]/90 border-r border-slate-900 backdrop-blur-xl">
-          <div className="flex items-center justify-center h-16 border-b border-slate-900">
-            <span className="text-xl font-extrabold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent tracking-wider">
-              CRM SUITE
-            </span>
+        <div className="flex flex-col w-64 bg-[#F5F4F0] border-r border-slate-800/80 backdrop-blur-xl">
+          <div className="flex items-center h-20 px-5 border-b border-slate-800/80">
+            <div className="flex items-center gap-3">
+              <img src="/aethelgard-mark.svg" alt="Ledger & Co." className="h-9 w-9 rounded" />
+              <div><span className="block text-sm font-extrabold text-[#141b2b] tracking-tight">Ledger &amp; Co.</span><span className="block text-[9px] font-bold uppercase tracking-[.18em] text-[#515c71]">Executive desk</span></div>
+            </div>
           </div>
           
-          <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto scrollbar-thin">
+          <nav className="flex-1 px-3 py-5 space-y-1 overflow-y-auto scrollbar-thin">
+            <button className="mb-5 flex w-full items-center justify-center gap-2 rounded bg-[#9d3d26] px-3 py-2.5 text-xs font-semibold text-white"><PlusCircle className="h-4 w-4" /> Quick Create</button>
             {filteredNavItems.map((item) => (
               <NavLink
                 key={item.name}
@@ -130,8 +134,8 @@ const DashboardLayout = ({ children }) => {
                 className={({ isActive }) =>
                   `flex items-center px-4 py-3 text-sm font-medium rounded-xl transition-all ${
                     isActive
-                      ? 'bg-gradient-to-r from-blue-500/20 to-indigo-500/10 text-blue-400 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.1)]'
-                      : 'text-slate-400 hover:bg-slate-800/40 hover:text-slate-200 border border-transparent'
+                      ? 'bg-[#eef0ff] text-[#9d3d26] border-l-2 border-[#9d3d26] shadow-none'
+                      : 'text-[#515c71] hover:bg-white hover:text-[#141b2b] border border-transparent'
                   }`
                 }
               >
@@ -166,7 +170,9 @@ const DashboardLayout = ({ children }) => {
       <div className="flex flex-col flex-1 overflow-hidden">
         
         {/* Top Header */}
-        <header className="flex items-center justify-between h-16 px-6 bg-[#08080a]/50 border-b border-slate-900 backdrop-blur-xl">
+        <header className="bg-white/90 border-b border-slate-800/80 backdrop-blur-xl">
+          <div className="hidden lg:flex items-center justify-between px-5 sm:px-8 py-1.5 bg-[#F5F4F0] border-b border-[#E5E5DF] text-[10px] uppercase tracking-wider text-[#475569]"><span className="font-semibold text-[#141b2b]">Editorial Executive Ledger <span className="mx-2 text-[#9d3d26]">·</span> Volume IX · Issue 44</span><span><span className="mr-4 text-[#5B7563]">● Advisory desk: active</span> Pipeline telemetry synchronized</span></div>
+          <div className="flex items-center justify-between min-h-16 px-5 sm:px-8">
           <div className="flex items-center">
             <button
               onClick={() => setSidebarOpen(true)}
@@ -174,20 +180,18 @@ const DashboardLayout = ({ children }) => {
             >
               <Menu className="w-6 h-6" />
             </button>
-            <h1 className="text-lg font-semibold text-slate-100">{getPageTitle()}</h1>
+            <div className="hidden items-center gap-2 md:flex"><Search className="h-4 w-4 text-[#64748B]" /><input aria-label="Search workspace" placeholder="Search accounts, contacts..." className="w-60 bg-transparent text-xs outline-none placeholder:text-[#94A3B8]" /></div><div><p className="text-[9px] font-bold uppercase tracking-[.2em] text-[#9d3d26]">Sovereign archive / portfolio control</p><h1 className="text-lg font-bold text-[#141b2b]">{getPageTitle()}</h1></div>
           </div>
           
           <div className="flex items-center space-x-4">
-            <div className="text-xs text-slate-400 hidden sm:block">
-              System Uptime Active
-            </div>
-            <div className="w-2.5 h-2.5 bg-emerald-500 rounded-full animate-pulse"></div>
+            <div className="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-emerald-400/15 bg-emerald-400/5 text-xs text-emerald-300"><div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>All systems operational</div>
+          </div>
           </div>
         </header>
 
         {/* Page Content Outlet */}
-        <main className="flex-1 overflow-y-auto p-6 bg-[#070b13] scrollbar-thin">
-          {children}
+        <main className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 bg-transparent scrollbar-thin">
+          <div className="page-shell max-w-[1600px] mx-auto">{children}</div>
         </main>
       </div>
 

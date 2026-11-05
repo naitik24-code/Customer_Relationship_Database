@@ -42,13 +42,13 @@ const Register = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-[#070b13] px-4">
+    <div className="auth-page flex items-center justify-center min-h-screen bg-[#FBFBF9] px-4">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(59,130,246,0.08),transparent_50%)]"></div>
       
       <div className="w-full max-w-md z-10 py-12">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-extrabold tracking-tight bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-            CRM SUITE
+            LEDGER &amp; CO.
           </h1>
           <p className="mt-2 text-sm text-slate-400">
             Join the enterprise dashboard team

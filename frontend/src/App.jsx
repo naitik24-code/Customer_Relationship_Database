@@ -13,6 +13,8 @@ import Tickets from './pages/Tickets';
 import Employees from './pages/Employees';
 import Reports from './pages/Reports';
 import AuditLogs from './pages/AuditLogs';
+import Home from './pages/Home';
+import HomeV2 from './pages/HomeV2';
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
   const { user, loading } = useAuth();
@@ -42,6 +44,7 @@ const AppRoutes = () => {
   return (
     <Routes>
       {/* Public Routes */}
+      <Route path="/" element={user ? <Navigate to="/dashboard" replace /> : <HomeV2 />} />
       <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> : <Login />} />
       <Route path="/register" element={user ? <Navigate to="/dashboard" replace /> : <Register />} />
       
